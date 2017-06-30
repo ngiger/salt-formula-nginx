@@ -51,8 +51,9 @@ Simple static HTTP site
             host:
               name: gitlab.domain.com
               port: 80
-
-Static site with access policy
+By default it assumes the content under  /srv/static/sites/{{site.name}}. This can be overriden with site.path as seen in the next example
+              
+Static site with access policy and a non standard path
 
 .. code-block:: yaml
 
@@ -63,6 +64,7 @@ Static site with access policy
             enabled: true
             type: nginx_static
             name: site01
+            site: /path/to/my/html/files
             access_policy:
               allow:
               - 192.168.1.1/24
